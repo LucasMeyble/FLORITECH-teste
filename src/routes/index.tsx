@@ -1,8 +1,8 @@
 import { createBrowserRouter, Outlet } from "react-router-dom";
 import Navbar from "@/components/layout/Navbar";
 import Sidebar from "@/components/layout/Sidebar";
-import Home from "@/pages/Home";
 import { SidebarProvider, useSidebar } from "@/context/SidebarContext";
+import Home from "@/pages/Home";
 import NotFound from "@/pages/NotFound";
 
 const LayoutContent = () => {
@@ -38,6 +38,10 @@ export const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "/users", element: <Home /> },
+      { path: "/my-data", element: <Home /> },
+      { path: "/help", element: <Home /> },
+      { path: "/users/:id/edit", element: <Home /> },
+      { path: "/logout", element: <Home /> },
       { path: "*", element: <NotFound /> },
     ],
   },
