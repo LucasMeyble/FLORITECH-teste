@@ -1,6 +1,6 @@
 import React from "react";
 import { useSidebar } from "@/context/SidebarContext";
-import Button from "@/components/ui/Button";  // ajuste o caminho conforme seu projeto
+import Button from "@/components/ui/Button";
 
 const Navbar: React.FC = () => {
   const { toggleSidebar } = useSidebar();
@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
         }
       />
 
-      <Button onClick={handleLogout} variant="danger">
+      <Button onClick={handleLogout} className="bg-transparent hover:bg-transparent cursor-pointer">
         Sair
       </Button>
     </nav>
