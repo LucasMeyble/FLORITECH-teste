@@ -95,14 +95,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         <NavLink
           to="/"
           onClick={onClose}
-          className={({ isActive }) =>
-            isActive
-              ? "text-white font-bold px-4 py-2 rounded-md flex items-center"
-              : "text-gray-400 hover:text-white px-4 py-2 rounded-md flex items-center"
-          }
-          style={({ isActive }) => ({
-            backgroundColor: isActive ? "#0f2c38" : "transparent",
-          })}
+          className={"text-gray-400 hover:text-white px-4 py-2 rounded-md flex items-center"}
         >
           <ArrowRightIcon className="w-5 h-5 mr-2 flex-shrink-0" />
           Sair
