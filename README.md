@@ -54,7 +54,7 @@ Dashboard web responsivo desenvolvido para o teste técnico da Flori Tech. O pro
 1. Clone o repositório:
    ```bash
    git clone https://github.com/LucasMeyble/FLORITECH-teste.git
-   cd floritech-dashboard
+   cd FLORITECH-teste
    ```
 
 2. Instale as dependências:
