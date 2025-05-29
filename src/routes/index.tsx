@@ -3,6 +3,7 @@ import Navbar from "@/components/layout/Navbar";
 import Sidebar from "@/components/layout/Sidebar";
 import { SidebarProvider, useSidebar } from "@/context/SidebarContext";
 import Home from "@/pages/Home";
+import Dashboard from "@/pages/Dashboard";
 import NotFound from "@/pages/NotFound";
 
 const LayoutContent = () => {
@@ -36,7 +37,7 @@ export const router = createBrowserRouter([
     path: "/",
     element: <Layout />,
     children: [
-      { path: "/", element: <Home /> },
+      { path: "/", element: <Dashboard /> },
       { path: "/users", element: <Home /> },
       { path: "/my-data", element: <Home /> },
       { path: "/help", element: <Home /> },
