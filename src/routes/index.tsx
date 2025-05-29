@@ -4,14 +4,20 @@ import Sidebar from "@/components/layout/Sidebar";
 import { SidebarProvider, useSidebar } from "@/context/SidebarContext";
 import Home from "@/pages/Home";
 import Dashboard from "@/pages/Dashboard";
+import MyProfile from "@/pages/MyProfile";
 import NotFound from "@/pages/NotFound";
 
 const LayoutContent = () => {
-  const { isOpen } = useSidebar();
+  const { isOpen, toggleSidebar } = useSidebar();
+  const closeSidebar = () => {
+    if (isOpen) {
+      toggleSidebar();
+    }
+  };
 
   return (
     <>
-      <Sidebar isOpen={isOpen} />
+      <Sidebar isOpen={isOpen} onClose={closeSidebar} />
       <div
         className={`flex flex-col flex-1 transition-margin duration-300 ease-in-out
           ${isOpen ? "ml-64" : "ml-0"}
@@ -39,7 +45,7 @@ export const router = createBrowserRouter([
     children: [
       { path: "/", element: <Dashboard /> },
       { path: "/users", element: <Home /> },
-      { path: "/my-data", element: <Home /> },
+      { path: "/my-profile", element: <MyProfile /> },
       { path: "/help", element: <Home /> },
       { path: "/users/:id/edit", element: <Home /> },
       { path: "/logout", element: <Home /> },

@@ -10,14 +10,16 @@ import {
 
 interface SidebarProps {
   isOpen: boolean;
+  onClose: () => void;
 }
 
 const userId = "123";
 
-const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
+const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
+
   return (
     <aside
-      className={`fixed top-0 left-0 h-full w-64 bg-[#133543] text-gray-200 flex flex-col p-4
+      className={`fixed top-0 left-0 h-full w-full md:w-64  bg-[#133543] text-gray-200 flex flex-col p-4
         transform transition-transform duration-300 ease-in-out
         ${isOpen ? "translate-x-0" : "-translate-x-full"}
       `}
@@ -28,6 +30,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
       <nav className="flex flex-col space-y-3">
         <NavLink
           to="/"
+          onClick={onClose}
           className={({ isActive }) =>
             isActive
               ? "text-white font-bold px-4 py-2 rounded-md flex items-center"
@@ -42,7 +45,8 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
         </NavLink>
 
         <NavLink
-          to="/my-data"
+          to="/my-profile"
+          onClick={onClose}
           className={({ isActive }) =>
             isActive
               ? "text-white font-bold px-4 py-2 rounded-md flex items-center"
@@ -58,6 +62,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
 
         <NavLink
           to="/help"
+          onClick={onClose}
           className={({ isActive }) =>
             isActive
               ? "text-white font-bold px-4 py-2 rounded-md flex items-center"
@@ -73,6 +78,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
 
         <NavLink
           to={`/users/${userId}/edit`}
+          onClick={onClose}
           className={({ isActive }) =>
             isActive
               ? "text-white font-bold px-4 py-2 rounded-md flex items-center"
@@ -88,6 +94,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
 
         <NavLink
           to="/logout"
+          onClick={onClose}
           className={({ isActive }) =>
             isActive
               ? "text-white font-bold px-4 py-2 rounded-md flex items-center"
