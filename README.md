@@ -1,54 +1,95 @@
-# React + TypeScript + Vite
+# Floritech Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Dashboard web responsivo desenvolvido para o teste técnico da Flori Tech. O projeto foi construído com foco em boas práticas de programação, responsividade e alta qualidade de código, utilizando React e TailwindCSS.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologias Utilizadas
 
-## Expanding the ESLint configuration
+- **React 19** — Biblioteca principal para construção da interface.
+- **TailwindCSS 4** — Framework utilitário para estilização rápida e responsiva.
+- **Vite** — Bundler e servidor de desenvolvimento ultra rápido.
+- **React Router Dom** — Gerenciamento das rotas do frontend.
+- **React Hook Form + Zod** — Controle e validação de formulários.
+- **Chart.js + react-chartjs-2** — Gráficos interativos para visualização de dados mockados.
+- **Zustand** — Gerenciamento leve de estado para contexto global.
+- **Heroicons** — Ícones SVG para interface.
+- **TypeScript** — Tipagem estática para maior segurança e manutenção do código.
+- **ESLint + plugins React** — Linter para manter o código limpo e padronizado.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Funcionalidades Implementadas
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **Tela Dashboard**  
+  Visão geral com gráficos de dispersão, pizza e colunas, usando dados mockados.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Tela My Profile**  
+  Visualização dos dados do perfil do usuário.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- **Tela de Edição de Usuário**  
+  Formulário para editar dados do usuário armazenados no LocalStorage, controlado via contexto React.
+
+- **Tela de Ajuda**  
+  Área dedicada para orientações e suporte ao usuário.
+
+- **Componentes reutilizáveis**  
+  - `InputLabel`: componente customizado para inputs com label e mensagens de erro.  
+  - `Button`: componente de botão estilizado e reutilizável.  
+
+- **Navegação**  
+  - Navbar e Sidebar responsivos e funcionais, otimizados para desktop e mobile (mobile-first).
+
+---
+
+## Como Rodar o Projeto Localmente
+
+### Pré-requisitos
+
+- Node.js (versão recomendada >= 18.x)
+- npm ou yarn
+
+### Passos
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/LucasMeyble/FLORITECH-teste.git
+   cd floritech-dashboard
+   ```
+
+2. Instale as dependências:
+   ```bash
+   npm install
+   # ou
+   yarn
+   ```
+
+3. Rode o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   # ou
+   yarn dev
+   ```
+
+4. Abra o navegador e acesse:
+   ```
+   http://localhost:5173
+   ```
+   O número da porta pode variar, confirme no terminal.
+
+---
+
+## Scripts Disponíveis
+
+- `dev` — inicia o servidor de desenvolvimento com hot reload.
+- `build` — gera a build de produção.
+- `preview` — roda a build gerada localmente para preview.
+- `lint` — executa ESLint para análise estática do código.
+
+---
+
+## Considerações Finais
+
+Este projeto foi desenvolvido respeitando os padrões modernos de desenvolvimento frontend, com organização modular e escalável. O foco principal foi garantir responsividade, boa usabilidade e componentes reutilizáveis.
+
+Para dúvidas, sugestões ou contribuições, sinta-se à vontade para abrir issues ou pull requests no repositório.
