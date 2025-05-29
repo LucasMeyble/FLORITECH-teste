@@ -6,6 +6,7 @@ import Home from "@/pages/Home";
 import Dashboard from "@/pages/Dashboard";
 import MyProfile from "@/pages/MyProfile";
 import Help from "@/pages/Help";
+import EditUser from "@/pages/EditUser";
 import NotFound from "@/pages/NotFound";
 
 const LayoutContent = () => {
@@ -48,8 +49,7 @@ export const router = createBrowserRouter([
       { path: "/users", element: <Home /> },
       { path: "/my-profile", element: <MyProfile /> },
       { path: "/help", element: <Help /> },
-      { path: "/users/:id/edit", element: <Home /> },
-      { path: "/logout", element: <Home /> },
+      { path: "/users/:id/edit", element: <EditUser /> },
       { path: "*", element: <NotFound /> },
     ],
   },

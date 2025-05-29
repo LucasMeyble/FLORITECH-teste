@@ -93,7 +93,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         </NavLink>
 
         <NavLink
-          to="/logout"
+          to="/"
           onClick={onClose}
           className={({ isActive }) =>
             isActive
